@@ -1,3 +1,14 @@
 <template>
-    <lightning-button label="Send to Whatsapp" onclick={SendThroughWhatsapp}></lightning-button>
+
+    <lightning-combobox name="message"
+                        label="Message"
+                        placeholder="Select Template"
+                        options={templates}
+                        onchange={handleChange}></lightning-combobox>
+
+    <lightning-input value={templateContent}>{templateContent}</lightning-input>
+
+    <lightning-button label="Send to Whatsapp" onclick={SendThroughWhatsapp}></lightning-button>    
+    
+    <template lwc:if={status}> Message sent </template>sdsds
 </template>
